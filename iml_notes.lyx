@@ -1,0 +1,5402 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+%\usepackage{fontspec}
+\newfontfamily\hebrewfont{David CLM}[Script=Hebrew]
+% fallback font
+\makeatletter
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+
+% not working
+\usepackage{newunicodechar}
+\newunicodechar{•}{asdf}
+
+
+\usepackage{xcolor}
+
+
+\renewcommand\thepart{\@arabic\c@part}
+\renewcommand\thesection{\@arabic\c@section}
+\renewcommand\thesubsection{\@roman\c@subsection}
+\renewcommand\thesubsubsection{\@arabic\c@subsubsection}
+\renewcommand\theparagraph{\thesubsubsection.\@arabic\c@paragraph}
+\renewcommand\thesubparagraph{\theparagraph.\@arabic\c@subparagraph}
+
+
+% SECTION
+\renewcommand\section{\@startsection{section}{1}{\z@}
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\bfseries\LARGE\noindent\textcolor{black}}}% look at \contentsname
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{1.5em}} % define table of contents line format
+
+
+
+% SUBSECTION
+
+\renewcommand\subsection{\@startsection{subsection}{1}{\z@}
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\bfseries\Large\noindent\textcolor{black}}} % use \textcolor{color}{arg consumed later automatically} instead of \color{color} to avoid a whatsit and disrupt the page breaking mechanism. Add \noindent when using \textcolor here. Indentation can still be achieved by replacing arg 3 of \@startsection.       
+\renewcommand*\l@subsection{\@dottedtocline{1}{0em}{3em}} % define table of contents line format
+
+% new page at part
+\usepackage{etoolbox}
+\preto{\part}{\clearpage}
+
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bulletLaTeX 0 "$\bullet$"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\heb}[1]{\text{#1}}
+{#1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expheb}[2]{\underset{\overset{\uparrow}{\mathclap{\heb{#2}}}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\exp}[2]{\underset{\overset{\uparrow}{\mathclap{#2}}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expup}[2]{\overset{\underset{\downarrow}{\mathclap{#2}}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expupheb}[2]{\overset{\underset{\downarrow}{\mathclap{\heb{#2}}}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expbrace}[2]{\underbrace{#1}_{\mathclap{#2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expbraceup}[2]{\overbrace{#1}^{\mathclap{#2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expbraceheb}[2]{\underbrace{#1}_{\mathclap{\heb{#2}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\expbraceupheb}[2]{\overbrace{#1}^{\mathclap{\heb{#2}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\underheb}[2]{\underset{\heb{#2}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\overheb}[2]{\overset{\mathclap{\heb{#2}}}{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\gr}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\gl}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\F}{\mathbb{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\E}{\mathbb{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\M}{\mathcal{M}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\limit}[1]{\underset{#1}{\lim}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sign}{\mathrm{sign}}
+{\text{sign}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Hom}{\mathrm{Hom}}
+{\text{Hom}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\End}{\mathrm{End}}
+{\text{End}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sp}{\mathrm{span}}
+{\text{span}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\id}{\mathrm{id}}
+{\text{id}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\im}{\mathrm{Im}}
+{\text{Im}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\e}{\mathrm{exp}}
+{\text{exp}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\chr}{\mychar}
+{\text{char}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\mathrm{trace}}
+{\text{trace}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\block}{\mathrm{block}}
+{\text{block}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rank}{\myrank}
+{\text{rank}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\siid}{\overset{\mathrm{i.i.d.}}{\sim}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\iid}{\mathrm{i.i.d.}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\P}{\mathcal{P}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\V}{\hat{V}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Ber}{\mathrm{Ber}}
+{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Unif}{\mathrm{Unif}}
+{\text{Unif}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Geo}{\mathrm{Geo}}
+{\text{Geo}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Bin}{\mathrm{Bin}}
+{\text{Bin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Pois}{\mathrm{Pois}}
+{\text{Pois}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Exp}{\mathrm{Exp}}
+{\text{Exp}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Var}{\mathrm{Var}}
+{\text{Var}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cov}{\mathrm{Cov}}
+{\text{Cov}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\corr}{\mathrm{Corr}}
+{\text{Corr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bias}{\mathrm{Bias}}
+{\text{Bias}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\MLE}{\mathrm{MLE}}
+{\text{MLE}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatorname*{argmax}}
+{\text{argmax}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\mathrm{argmin}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\n}{\mathrm{N}}
+{\text{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\x}{\vec{x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\veta}{\vec{\theta}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mat}{\hat{\mu}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tat}{\hat{\theta}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sigat}{\hat{\sigma}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+date{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+emptypage}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mbox{}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+emptyevenpage}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+ifodd
+\backslash
+value{page}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+emptypage
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+else
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "4cm"
+height_special "none"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{107}{3}
+\backslash
+selectfont
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "80col%"
+height "12pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+מבוא למערכות לומדות
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "80col%"
+height "12pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1.5cm"
+height_special "none"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{18}{12}
+\backslash
+selectfont
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+הוקלד בידי אייל צווכר
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{12}{12}
+\backslash
+selectfont
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מבוא למערכות לומדות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+67577
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+תשפ
+\begin_inset Quotes qrd
+\end_inset
+
+ב סמסטר ב'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+partname{שבוע}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+כלים מתמטיים
+\end_layout
+
+\begin_layout Section
+הרצאה - תורת האמידה
+\end_layout
+
+\begin_layout Subsubsection*
+מטרות הקורס
+\end_layout
+
+\begin_layout Itemize
+היכרות עם בעיות למידה ואלגוריתמי למידה )חלק תיאורטי(
+\end_layout
+
+\begin_layout Itemize
+הבנה של העקרונות מאחורי האלגוריתמים )חלק מתמטי(
+\end_layout
+
+\begin_layout Itemize
+יכולת לממש אלגוריתמים של בעיות למידה )חלק תכנותי(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\end_layout
+
+\begin_layout Standard
+נניח שאנחנו רוצים לדעת מה השעה, אבל אין לנו שום דרך לדעת.
+\end_layout
+
+\begin_layout Standard
+אז נשאל מישהו מה השעה.
+ נניח שהוא ענה 
+\begin_inset Formula $13:15$
+\end_inset
+
+ והשעה היא באמת 
+\begin_inset Formula $13:13$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+איך נדע מה השעה האמיתית?
+\end_layout
+
+\begin_layout Itemize
+איך נדע כמה כל תשובה מדוייקת?
+\end_layout
+
+\begin_layout Standard
+ניתן לשאול הרבה אנשים ולחשב ממוצע של התשובות שלהם.
+\end_layout
+
+\begin_layout Standard
+התשובות שקיבלנו מהאנשים נקראות 
+\bar under
+תצפיות
+\bar default
+ )
+\lang english
+observation
+\lang hebrew
+(.
+ נסמנן ב-
+\begin_inset Formula $x_{1},\dots,x_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הזמן המשוער שלנו הוא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{x}=\frac{1}{m}\sum_{i}x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+סט התצפיות שלנו נקרא 
+\bar under
+המדגם
+\bar default
+ )
+\lang english
+sample
+\lang hebrew
+(.
+\end_layout
+
+\begin_layout Standard
+נחשוב על 
+\begin_inset Formula $x_{1},\dots,x_{n}$
+\end_inset
+
+ כערכים שהתקבלו )
+\lang english
+realized
+\lang hebrew
+( במשתנים מקריים 
+\begin_inset Formula $X_{1},\dots,X_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+נאמר כי 
+\begin_inset Formula $x_{1},\dots,x_{m}$
+\end_inset
+
+ הם מתפלגים באופן זהה )
+\lang english
+identically distributed
+\lang hebrew
+( אם כולם ערכים שנתקבלו מערכים משתנים המקריים המתפלגים עם אותה התפלגות,
+ כלומר, 
+\begin_inset Formula $X_{1},\dots,X_{m}\sim\P$
+\end_inset
+
+ ו-
+\begin_inset Formula $X_{i}=x_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+נאמר שדגימות 
+\begin_inset Formula $x_{1},\dots,x_{m}$
+\end_inset
+
+ הן בעלות אותה התפלגות ובלתי תלויים )
+\lang english
+independently identically distributed or i.i.d
+\lang hebrew
+( אם הם מתפלגים באופן זהה ובלתי תלויים.
+ במקרה זה נסמן
+\begin_inset Formula 
+\[
+X_{1},\dots,X_{m}\iid\P,\quad\forall i\ X_{i}=x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+מהי 
+\begin_inset Formula $\P$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+נניח כי 
+\begin_inset Formula $\P$
+\end_inset
+
+ היא התפלגות פרמטרית כלשהי שמוגדרת על ידי קבוצת פרמטרים 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\veta$
+\end_inset
+
+ היא וקטור של פרמטרים.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Theta$
+\end_inset
+
+ היא קבוצת כל הערכים האפשריים לפרמטר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+עבור 
+\begin_inset Formula $\P:=\Pois\left(\lambda\right)$
+\end_inset
+
+ אזי 
+\begin_inset Formula $\veta:=\left\{ \lambda\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $\Theta:=\gr_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+עבור 
+\begin_inset Formula $\P:=\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+ אזי 
+\begin_inset Formula $\veta:=\left\{ \mu,\sigma^{2}\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $\Theta:=\gr\times\gr_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בהינתן דגימות 
+\begin_inset Formula $x_{1},\dots,x_{m}$
+\end_inset
+
+ שנדגמו 
+\begin_inset Formula $\iid$
+\end_inset
+
+ לפי 
+\begin_inset Formula $\P\left(\veta\right)$
+\end_inset
+
+ 
+\bar under
+כאשר אנחנו לא יודעים את 
+\begin_inset Formula $\veta$
+\end_inset
+
+
+\bar default
+, נרצה לדעת מהו 
+\begin_inset Formula $\veta^{\ast}$
+\end_inset
+
+ שנותן את ההתאמה הכי טובה ל-
+\begin_inset Formula $\veta$
+\end_inset
+
+ האמיתי.
+\end_layout
+
+\begin_layout Standard
+)למשל, 
+\emph on
+נניח
+\emph default
+ ש-
+\begin_inset Formula $\P$
+\end_inset
+
+ היא פואסונית ונחפש את הפרמטר 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ 
+\emph on
+הכי טוב
+\emph default
+.(
+\end_layout
+
+\begin_layout Subsection*
+פורמליזציה
+\end_layout
+
+\begin_layout Itemize
+נגדיר פונקצית החלטה/כלל החלטה 
+\begin_inset Formula $\delta:\gr^{m}\to\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+עבור 
+\begin_inset Formula $\P:=\Pois\left(\lambda\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\left(x_{1},\dots,x_{m}\right)\overset{\delta}{\mapsto}\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+עבור 
+\begin_inset Formula $\P:=\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\left(x_{1},\dots,x_{m}\right)\overset{\delta}{\mapsto}\left(\mu,\sigma^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+את קבוצת כל פונקציות ההחלטה נסמן ב-
+\begin_inset Formula $\Delta:=\left\{ \delta:\gr^{m}\to\Theta\right\} $
+\end_inset
+
+.
+ היא מכונה 
+\bar under
+מרחב ההשערות
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\delta\in\Delta$
+\end_inset
+
+ פונקצית החלטה.
+ אזי 
+\begin_inset Formula $\delta\left(X_{1},\dots,X_{m}\right)$
+\end_inset
+
+ נקראת 
+\bar under
+אומד )
+\lang english
+estimator
+\lang hebrew
+( של הפרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+
+\bar default
+, או לפעמים רק 
+\bar under
+אומד
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\veta$
+\end_inset
+
+ המתקבל נקרא 
+\bar under
+אומדן
+\bar default
+.
+\end_layout
+
+\begin_layout Subsection*
+אומדים של התפלגות גאוסיאנית
+\end_layout
+
+\begin_layout Standard
+נניח שיש לנו דגימות 
+\begin_inset Formula $x_{1},\dots,x_{m}\siid\P$
+\end_inset
+
+ עבור 
+\begin_inset Formula $\P:=\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+ ואנחנו רוצים להעריך את 
+\begin_inset Formula $\mu,\sigma^{2}$
+\end_inset
+
+.
+ איך נוכל לעשות את זה? איזה אומד נבחר עבור 
+\begin_inset Formula $\mu,\sigma^{2}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+האומד 
+\bar under
+ממוצע המדגם
+\bar default
+ )
+\lang english
+sample mean
+\lang hebrew
+( מוגדר על ידי
+\begin_inset Formula 
+\[
+\mat_{X}:=\frac{1}{m}\sum x_{i}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+הערה: הסימון 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ הוא האומד לפרמטר 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+האומד 
+\bar under
+שונות המדגם
+\bar default
+ )
+\lang english
+sample variance
+\lang hebrew
+( מוגדר על ידי
+\begin_inset Formula 
+\[
+\sigat_{X}^{2}:=\frac{1}{m-1}\sum\left(x_{i}-\mat_{X}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+תכונות של אומדים
+\end_layout
+
+\begin_layout Standard
+נתבונן למשל בשונות המדגם.
+ יכולנו לבחור בהרבה אפשרויות אחרות לפונקציות:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigat_{1}:=\frac{1}{m-1}\sum\left(x_{i}-\mat\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigat_{2}:=\frac{1}{m}\sum\left(x_{i}-\mat\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigat_{3}:=\frac{1}{m}\sum\left|x_{i}-\mat\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מה מהם 
+\begin_inset Quotes qld
+\end_inset
+
+הכי טוב
+\begin_inset Quotes qrd
+\end_inset
+
+? מה זה בכלל אומר 
+\begin_inset Quotes qld
+\end_inset
+
+להיות הכי טוב
+\begin_inset Quotes qrd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Subsubsection*
+הערה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1},\dots,X_{m}$
+\end_inset
+
+ הם משתנים מקריים, ולכן, כיוון ש-
+\begin_inset Formula $\delta$
+\end_inset
+
+ היא פונקציה של 
+\begin_inset Formula $X_{1},\dots,X_{m}$
+\end_inset
+
+ אזי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ עצמו הוא משתנה מקרי.
+\end_layout
+
+\begin_layout Standard
+לכן, אנחנו יכולים לשאול מהי התוחלת של 
+\begin_inset Formula $\delta$
+\end_inset
+
+, מה השונות שלו, וכו'.
+\end_layout
+
+\begin_layout Subsubsection*
+רעיון
+\end_layout
+
+\begin_layout Standard
+כאשר נגדיר אומד, תכונה שנרצה שתהיה לו היא שהוא יהיה בלתי מוטה )
+\lang english
+unbiased
+\lang hebrew
+(, כלומר, בממוצע הערך שהוא מחזיר שווה לערך האמיתי.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ אומד עבור פרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+.
+ ההפרש 
+\begin_inset Formula $d:=\delta\left(X_{1},\dots,X_{n}\right)-\theta$
+\end_inset
+
+ נקרא 
+\bar under
+השגיאה
+\bar default
+ של 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ אומד עבור פרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+.
+ הגודל
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\bias_{\veta}\left[\delta\left(X_{1},\dots,X_{m}\right)\right] & :=\E_{X_{1},\dots,X_{m}\mid\veta}\left[d\right]\\
+ & =\E_{X_{1},\dots,X_{m}\mid\veta}\left[\delta\left(X_{1},\dots,X_{m}\right)-\veta\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נקראת ההטייה )
+\lang english
+bias
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+systemic error
+\lang hebrew
+( של 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+)התוחלת נלקחת על הרבה דגימות של 
+\begin_inset Formula $X_{1},\dots,X_{m}$
+\end_inset
+
+ מההתפלגות עם פרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+ מסויים(
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ אומד עבור פרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נאמר כי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ הוא 
+\bar under
+בלתי מוטה
+\bar default
+ אם לכל 
+\begin_inset Formula $\veta\in\Theta$
+\end_inset
+
+ מתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bias_{\veta}\left[\delta\left(X_{1},\dots,X_{m}\right)\right]=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+טענה
+\end_layout
+
+\begin_layout Standard
+האומד ממוצע המדגם 
+\begin_inset Formula $\mat$
+\end_inset
+
+ הוא בלתי מוטה עבור ההתפלגות 
+\begin_inset Formula $\P:=\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הוכחה
+\end_layout
+
+\begin_layout Standard
+לכן 
+\begin_inset Formula $\mat$
+\end_inset
+
+ הוא אומד בלתי מוטה.
+\end_layout
+
+\begin_layout Subsubsection*
+טענה
+\end_layout
+
+\begin_layout Standard
+האומד שונות המדגם 
+\begin_inset Formula $\sigat^{2}$
+\end_inset
+
+ הוא בלתי מוטה עבור ההתפלגות 
+\begin_inset Formula $\P:=\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הוכחה
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula 
+\begin{align*}
+\E\left[\sigat^{2}\right] & =\frac{1}{m-1}\sum_{i}\E\left[\left(X_{i}-\mat\right)^{2}\right]=\frac{1}{m-1}\E\left[\left(X_{i}-\frac{\sum\limits _{j}X_{j}}{m}\right)^{2}\right]\\
+ & =\frac{1}{m-1}\E\left[X_{i}^{2}-2X_{i}\cdot\expbrace{\left(\frac{1}{m}\sum_{j}X_{i}\right)}{\mat}+\expbrace{\frac{1}{m^{2}}\sum_{j,k}X_{j}X_{k}}{\mat^{2}}\right]=\\
+ & =\frac{1}{m-1}\E\left[\sum_{i}\left[X_{i}^{2}\right]-\frac{2}{m}\sum_{i,j}\E\left[X_{i}X_{j}\right]+\frac{1}{m}\sum_{j,k}\E\left[X_{j}X_{k}\right]\right]=\\
+ & =\frac{1}{m-1}\left(\left(1-\frac{1}{m}\right)\sum_{i}\E\left[X_{i}^{2}\right]-\frac{1}{m}\sum_{i\neq j}\E\left[X_{i}X_{j}\right]\right)=
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מכיוון שהמדידות הן 
+\begin_inset Formula $\iid$
+\end_inset
+
+ אזי נגדיר 
+\begin_inset Formula $X\sim\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+ ויתקיים:
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $\E\left[X_{i}\right]=\E\left[X\right]$
+\end_inset
+
+ ו-
+\begin_inset Formula $\E\left[X_{i}^{2}\right]=\E\left[X^{2}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, 
+\begin_inset Formula $\E\left[X_{i}X_{j}\right]=\E\left[X_{i}\right]\E\left[X_{j}\right]=\left(\E\left[X\right]\right)^{2}$
+\end_inset
+
+ )כי המ
+\begin_inset Quotes qrd
+\end_inset
+
+מ ב
+\begin_inset Quotes qrd
+\end_inset
+
+ת(
+\end_layout
+
+\begin_layout Standard
+לכן 
+\begin_inset Formula 
+\begin{align*}
+ & =\frac{1}{m-1}\left(\frac{m-1}{m}\cdot m\E\left[X^{2}\right]-\frac{m\left(m-1\right)}{m}\left(\E\left[X\right]\right)^{2}\right)=\\
+ & =\frac{1}{m-1}\left(\left(m-1\right)\E\left[X^{2}\right]-\left(m-1\right)\left(\E\left[X\right]\right)^{2}\right)=\\
+ & =\E\left[X^{2}\right]-\left(\E\left[X\right]\right)^{2}=\Var\left(X\right)=\sigma^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כנדרש.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\delta$
+\end_inset
+
+ אומד עבור פרמטר 
+\begin_inset Formula $\veta$
+\end_inset
+
+.
+ 
+\bar under
+השונות
+\bar default
+ של 
+\begin_inset Formula $\delta$
+\end_inset
+
+ היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Var\left(\delta\right):=\E_{X_{1},\dots,X_{m}\mid\veta}\left[\left(\delta\left(X_{1},\dots,X_{m}\right)-\E_{X_{1},\dots,X_{m}\mid\veta}\left[\delta\left(X_{1},\dots,X_{m}\right)\right]\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\P$
+\end_inset
+
+ התפלגות עם שונות של 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $X_{1},\dots,X_{m}\siid\P$
+\end_inset
+
+.
+ מהו 
+\begin_inset Formula $\Var\left(\mat\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Var\left(\mat\right) & =\Var\left(\frac{1}{m}\sum X_{i}\right)=\frac{1}{m^{2}}\Var\left(\sum X_{i}\right)=\\
+ & \exp ={\iid}\frac{1}{m^{2}}\sum_{i=1}^{m}\Var\left(X_{i}\right)=\frac{1}{m^{2}}\cdot m\cdot\sigma^{2}=\frac{\sigma^{2}}{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+משמעות
+\end_layout
+
+\begin_layout Standard
+השונות של האומד נותן לנו מדד לכמה טובים הביצועים של האומד שלנו.
+\end_layout
+
+\begin_layout Standard
+אם השונות גדולה, האומד לא מאוד טוב.
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+נוכל לומר שהאומד הכי טוב הוא 
+\begin_inset Formula $\delta\in\Delta$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\delta$
+\end_inset
+
+ 
+\emph on
+בלתי מוטה
+\emph default
+ וגם 
+\begin_inset Formula $\Var\left(\delta\right)$
+\end_inset
+
+ 
+\series bold
+מינימלי
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+נראות מקסימלית
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X\sim\P\left(\veta\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $f$
+\end_inset
+
+ פונקצית הצפיפות של 
+\begin_inset Formula $\P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+פונקציית הנראות
+\bar default
+ היא
+\begin_inset Formula 
+\[
+\gl\left(\veta\mid x\right):=f_{\veta}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $x$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realization
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+נתבונן בהתפלגות גאוסיאנית עם 
+\begin_inset Formula $x_{1},\dots,x_{m}\siid\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+ ונסמן 
+\begin_inset Formula $\veta=\left\{ \mu,\sigma^{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+פונקציית הנראות היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gl\left(\veta\mid x_{i}\right)=f_{\veta}\left(x_{i}\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{\left(x_{i}-\mu\right)^{2}}{2\sigma^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון ש-
+\begin_inset Formula $x_{1},\dots,x_{m}$
+\end_inset
+
+ הן 
+\begin_inset Formula $\iid$
+\end_inset
+
+ אזי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\gl\left(\veta\mid x_{1},\dots,x_{m}\right) & =f_{\veta}\left(x_{1},\dots,x_{m}\right)=\\
+ & =\prod_{i=1}^{m}f_{\veta}\left(x_{i}\right)=\\
+ & =\frac{1}{\sqrt{2\pi\sigma^{2}}}\e\left(-\frac{1}{2\sigma^{2}}\sum\left(x_{i}-\mu\right)^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הערה
+\end_layout
+
+\begin_layout Standard
+נשתמש ב-
+\begin_inset Formula $\gl$
+\end_inset
+
+ על מנת להשוות בין דברים באופן יחסי! אם יהיו לנו הרבה דגימות, 
+\begin_inset Formula $\gl$
+\end_inset
+
+ ישאף ל-
+\begin_inset Formula $0$
+\end_inset
+
+ בכל מקרה.
+ 
+\end_layout
+
+\begin_layout Standard
+אבל נוכל לשאול מי יותר סביר מבין 
+\begin_inset Formula $\veta_{1}$
+\end_inset
+
+ או 
+\begin_inset Formula $\veta_{2}$
+\end_inset
+
+ על ידי כך שנשווה בין 
+\begin_inset Formula $\gl\left(\veta_{1}\mid x_{1},\dots,x_{m}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\gl\left(\veta_{2}\mid x_{1},\dots,x_{m}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $\gl$
+\end_inset
+
+ פונקציית הנראות עבור התפלגות 
+\begin_inset Formula $\P$
+\end_inset
+
+ כלשהי, המתואר על ידי 
+\begin_inset Formula $\veta\in\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X\sim\P\left(\veta\right)$
+\end_inset
+
+ משתנה מקרי ויהי 
+\begin_inset Formula $x$
+\end_inset
+
+ ערך שנדגם ממנו.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+אומד הנראות המרכזית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\lang english
+Maximum Likelihood Estimator or MLE
+\lang hebrew
+( עבור 
+\begin_inset Formula $\veta$
+\end_inset
+
+ הוא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tat^{\MLE}:=\argmax_{\veta\in\Theta}\gl\left(\veta\mid x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+נחשב את ה-
+\begin_inset Formula $\MLE$
+\end_inset
+
+ של הממוצע של ההתפלגות הגאוסיאנית 
+\begin_inset Formula $\mat^{\MLE}$
+\end_inset
+
+, כאשר נתון לנו 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $x_{1},\dots,x_{m}\siid\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נרצה למצוא את
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mat^{\MLE}=\argmax_{\mu\in\gr}\gl\left(\mu\mid x_{1},\dots,x_{m},\sigma^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mat^{\MLE} & =\argmax_{\mu\in\gr}\gl\left(\mu\mid x_{1},\dots,x_{m},\sigma^{2}\right)=\\
+ & \exp ={\iid}\argmax_{\mu\in\gr}\prod_{i}\frac{1}{\sqrt{2\pi\sigma^{2}}}\e\left(-\frac{\left(x_{i}-\mu\right)^{2}}{2\sigma^{2}}\right)=\\
+ & \exp ={\left(\ast\right)}\argmax_{\mu\in\gr}\prod_{i}\e\left(-\frac{\left(x_{i}-\mu\right)^{2}}{2\sigma^{2}}\right)=\\
+ & =\argmax_{\mu\in\gr}\e\left(-\frac{1}{2\sigma^{2}}\sum_{i}\left(x_{i}-\mu\right)^{2}\right)=\\
+ & \exp ={\heb{\text{מונוטונית עולה}}\ \log}\argmax_{\mu\in\gr}\log\left(\e\left(-\frac{1}{2\sigma^{2}}\sum_{i}\left(x_{i}-\mu\right)^{2}\right)\right)=\\
+ & =\argmax\left(-\frac{1}{2\sigma^{2}}\sum_{i}\left(x_{i}-\mu\right)^{2}\right)=\\
+ & =\argmax\left(-\sum_{i}\left(x_{i}-\mu\right)^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\ast\right)$
+\end_inset
+
+ נבחין כי אנחנו מחפשים את מי שממקסם את הפונקציה ולא את הערך המקסימלי של
+ הפונקציה! הקורם 
+\begin_inset Formula $\frac{1}{\sqrt{2\pi\sigma^{2}}}$
+\end_inset
+
+ אולי משפיע על ערך הפונציה אך הוא אינו משפיע על הערך שממקסם אותה
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+על מנת למקסם את הפונקציה, נגזור ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\mu}\left(-\sum_{i}\left(x_{i}-\mu\right)^{2}\right)=-\sum_{i=1}^{m}\frac{\partial\left(x_{i}-\mu\right)^{2}}{\partial\mu}=\sum_{i=1}^{m}2\left(x_{i}-\mu\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\boxed{\mat^{\MLE}=\frac{1}{m}\sum_{i=1}^{m}x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+מסקנה
+\end_layout
+
+\begin_layout Standard
+אומד ממוצע המדגם )
+\lang english
+sample mean
+\lang hebrew
+(, שראינו שהוא אומד בלתי מוטה, הוא גם האומד
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+maximum likelihood
+\lang hebrew
+!
+\end_layout
+
+\begin_layout Subparagraph*
+הערה
+\end_layout
+
+\begin_layout Standard
+ממוצע המדגם ממזער את ריבועי המרחקים ממנו.
+\end_layout
+
+\begin_layout Subsection*
+כמה טוב השיערוך?
+\end_layout
+
+\begin_layout Standard
+מכיוון שהאומד הוא משתנה מקרי, יש לו 
+\emph on
+התפלגות
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+למשל, במקרה של ה-
+\lang english
+sample mean
+\lang hebrew
+, אנחנו יודעים ש-
+\begin_inset Formula $x_{1},\dots,x_{m}\siid\n\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\E\left[\mat\right]=\mu,\quad\Var\left(\mat\right)=\frac{\sigma^{2}}{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן גם להראות )אבל לא נראה( שמתקיים 
+\begin_inset Formula $\mat\sim\n\left(\mu,\frac{\sigma^{2}}{m}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בפרט:
+\end_layout
+
+\begin_layout Itemize
+האומד נותן התפלגות גאוסיאנית סביב הערך האמיתי 
+\begin_inset Formula $\mu$
+\end_inset
+
+ )וזה הגיוני כי הוא 
+\lang english
+unbiased
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Itemize
+השונות פרופורציונלית לשונות של המידע המקורי, והיא דועכת באופן לינארי ביחס
+ למספר הדגימות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diagrams/w01d01.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הגרף מתאר מצב בו הגרלנו הרבה פעמים 
+\begin_inset Formula $m_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $m_{2}$
+\end_inset
+
+ ערכים מהתפלגות גאוסיאנית עם 
+\begin_inset Formula $\mu,\sigma^{2}$
+\end_inset
+
+, וראינו אילו ערכי 
+\begin_inset Formula $\mat_{1},\mat_{2}$
+\end_inset
+
+ התקבלו לנו לפי ממוצע המדגם.
+\end_layout
+
+\begin_layout Standard
+לכן נוכל לשאול שאלות כגון:
+\end_layout
+
+\begin_layout Itemize
+מה הסיכוי שנשערך ערך מסויים?
+\end_layout
+
+\begin_layout Itemize
+כמה אנחנו בטוחים בתוצאה שהתקבלה לנו?
+\end_layout
+
+\begin_layout Itemize
+מה הסיכוי לסטייה מהערך האמיתי, וכיצד זה תלוי במספר הדגימות?
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+נניח שאנחנו רוצים להעריך את ההטייה של מטבע לא הוגן כלשהו.
+\end_layout
+
+\begin_layout Standard
+כלומר, נתון מטבע שיש לו סיכוי של 
+\begin_inset Formula $p$
+\end_inset
+
+ לתת 
+\begin_inset Formula $Heads$
+\end_inset
+
+ ואנחנו רוצים לדעת מהו 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נחשוב על הטלת מטבע בתור משתנה מקרי ברנולי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{D}_{p}\left(X\right) & :=\begin{cases}
+p & X=1\\
+1-p & X=0
+\end{cases},\quad p\in\left[0,1\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בהינתן דגימה של 
+\begin_inset Formula $m$
+\end_inset
+
+ הטלות 
+\begin_inset Formula $S:=\left\{ x_{1},\dots,x_{m}\right\} $
+\end_inset
+
+, נסמן את התפלגות של 
+\begin_inset Formula $m$
+\end_inset
+
+ הדגימות על ידי 
+\begin_inset Formula $\mathcal{D}_{p}^{m}$
+\end_inset
+
+ ונסמן את ההסתברות לקבל את הדגימות 
+\begin_inset Formula $S$
+\end_inset
+
+ ב-
+\begin_inset Formula $\mathcal{D}_{p}^{m}\left(S\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בהינתן מדגם כזה, נרצה להפיק 
+\bar under
+אלגוריתם למידה
+\bar default
+ 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ שיעריך את 
+\begin_inset Formula $p$
+\end_inset
+
+ ונשאל כמה האלגוריתם שלנו מדוייק.
+\end_layout
+
+\begin_layout Standard
+האלגוריתם מקבל את 
+\begin_inset Formula $S$
+\end_inset
+
+ כקלט, שנבחר 
+\begin_inset Formula $\iid$
+\end_inset
+
+ לפי 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ ומוציא כפלט את ההערכה ל-
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נסמן אותה ב-
+\begin_inset Formula $\mathcal{A}\left(S\right)$
+\end_inset
+
+ או 
+\begin_inset Formula $\hat{p}\left(S\right)$
+\end_inset
+
+ או בקיצור נמרץ 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אלגוריתם הלמידה בו נשתמש יהיה פשוט ה
+\bar under
+שכיחות האמפירית
+\bar default
+ )כלומר, כמה פעמים מופיע 
+\begin_inset Formula $Heads$
+\end_inset
+
+ במדגם(, שזה בדיוק ממוצע המדגם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}\left(S\right)=\frac{1}{m}\sum_{i}x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנחנו יודעים שהאומד הזה הוא בלתי מוטה.
+ לכן, בתוחלת נקבל 
+\begin_inset Formula $\E_{S}\left(\hat{p}\right)=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בעיות:
+\end_layout
+
+\begin_layout Itemize
+המדגם שלנו סופי, ולכן 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ שלנו לא יכול מדויק.
+ לכן נסתפק ב-
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ שיהיה מדויק מספיק עבורנו, כלומר, 
+\begin_inset Formula $\left|\hat{p}-p\right|\leq\varepsilon$
+\end_inset
+
+ עבור 
+\begin_inset Formula $\varepsilon\in\left(0,1\right)$
+\end_inset
+
+ כלשהו.
+\end_layout
+
+\begin_layout Itemize
+אלא אם כן 
+\begin_inset Formula $p\in\left\{ 0,1\right\} $
+\end_inset
+
+, תמיד יש סיכוי 
+\emph on
+כלשהו
+\emph default
+ לקבל 
+\begin_inset Formula $S$
+\end_inset
+
+ שלא מייצג את 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+.
+ לכן, יהיה עלינו לשאול מה הסיכוי ש-
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ יחזיר תוצאה טובה מספיק, כלומר, נחשב 
+\begin_inset Formula $\Pr\left(\left|\hat{p}-p\right|\leq\varepsilon\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+תזכורת )א
+\begin_inset Quotes qrd
+\end_inset
+
+ש מרקוב(
+\end_layout
+
+\begin_layout Standard
+עבור מ
+\begin_inset Quotes qrd
+\end_inset
+
+מ 
+\begin_inset Formula $X$
+\end_inset
+
+ אי שלילי עם תוחלת סופית מתקיים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left(X\geq a\right)\leq\frac{\E\left(X\right)}{a}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+במקרה שלנו, 
+\begin_inset Formula $\left|\hat{p}-p\right|$
+\end_inset
+
+הוא מ
+\begin_inset Quotes qrd
+\end_inset
+
+מ אי שלילי.
+\end_layout
+
+\begin_layout Standard
+לכל רמת דיוק 
+\begin_inset Formula $\varepsilon\in\left(0,1\right)$
+\end_inset
+
+ נוכל לחסום את הסיכוי לסטות מ-
+\begin_inset Formula $p$
+\end_inset
+
+ ביותר מ-
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ על ידי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left[\left|\hat{p}-p\right|\geq\varepsilon\right]\leq\frac{\E\left(\left|\hat{p}-p\right|\right)}{\varepsilon}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נותר לנו לחסום מלמעלה את 
+\begin_inset Formula $\E\left(\mid\hat{p}-p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ניזכר כי 
+\begin_inset Formula $\Var\left(A\right)=\E\left(A\right)-\left(\E\left(A\right)\right)^{2}$
+\end_inset
+
+ ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Var\left(\left|\hat{p}-p\right|\right)=\E\left(\left|\hat{p}-p\right|\right)-\E^{2}\left(\left|\hat{p}-p\right|\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן, מהיות 
+\begin_inset Formula $\Var\left(\left|\hat{p}-p\right|\right)\ge0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\E^{2}\left(\left|\hat{p}-p\right|\right)\leq\E\left(\left|\hat{p}-p\right|^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\E^{2}\left(\left|\hat{p}-p\right|\right) & \leq\E\left(\left|\hat{p}-p\right|^{2}\right)=\E\left(\left(\hat{p}-p\right)^{2}\right)=\\
+ & \exp ={\left(\ast\right)}\E\left(\left(\hat{p}-\E\left(\hat{p}\right)\right)^{2}\right)=\Var\left(\hat{p}\right)=
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\ast\right)$
+\end_inset
+
+ כיוון ש-
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ הוא אומד בלתי מוטה, 
+\begin_inset Formula $\E\left(\hat{p}\right)=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נזכור כי 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ הוא ממוצע של 
+\begin_inset Formula $m$
+\end_inset
+
+ הטלות מטבע, ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\Var\left(\frac{1}{m}\sum X_{i}\right)=\frac{1}{m^{2}}\Var\left(\sum x_{i}\right)\exp ={\iid}\frac{p\left(1-p\right)}{m}\exp{\leq}{\left(\ast\right)}\frac{1}{4m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\ast\right)$
+\end_inset
+
+ שכן הפונקציה 
+\begin_inset Formula $f\left(p\right):=p\left(1-p\right)$
+\end_inset
+
+ מקבל את הערך המקסימלי שלה בקטע 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+ עבור 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(p\right)=\frac{1}{4}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\E\left(\left|\hat{p}-p\right|\right)\leq\frac{1}{\sqrt{4m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם כן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left[\left|\hat{p}-p\right|\geq\varepsilon\right]\leq\frac{\E\left(\left|\hat{p}-p\right|\right)}{\varepsilon}\leq\frac{1}{\sqrt{4m\varepsilon^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left[\left|\hat{p}-p\right|\leq\varepsilon\right]\geq1-\frac{1}{\sqrt{4m\varepsilon^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בתור שלב אחרות, נסמן 
+\begin_inset Formula $\delta=\frac{1}{\sqrt{4m\varepsilon^{2}}}$
+\end_inset
+
+.
+ נוכל לבודד את 
+\begin_inset Formula $m$
+\end_inset
+
+ ונקבל 
+\begin_inset Formula $m=\frac{1}{4\varepsilon^{2}\delta^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, לכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+, אם נקבל 
+\begin_inset Formula $m\geq\frac{1}{4\varepsilon^{2}\delta^{2}}$
+\end_inset
+
+ דגימות, אזי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left(\left|\hat{p}-p\right|\leq\varepsilon\right)\geq1-\delta
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אפשר לשפר את התוצאה הזו!
+\end_layout
+
+\begin_layout Standard
+למשל, אם נשתמש באי-שוויון צ'בישב.
+\end_layout
+
+\begin_layout Subsubsection*
+תזכורת )א
+\begin_inset Quotes qrd
+\end_inset
+
+ש צ'בישב(
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X$
+\end_inset
+
+ מ
+\begin_inset Quotes qrd
+\end_inset
+
+מ בעל תוחלת ושונות.
+ אזי לכל 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ מתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left[\left|X-\E\left[X\right]\geq\varepsilon\right|\right]\leq\frac{\Var\left(X\right)}{\varepsilon^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן, בהינתן 
+\begin_inset Formula $x_{1},\dots,x_{m}\siid\Ber\left(p\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ כמו שהגדרנו נקבל
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Pr\left[\left|\hat{p}-p\right|\geq\varepsilon\right] & =\Pr\left[\left|\hat{p}-\E\left(\hat{p}\right)\right|\geq\varepsilon\right]\leq\frac{\Var\left(\hat{p}\right)}{\varepsilon^{2}}=\\
+ & =\frac{1}{\varepsilon^{2}}\Var\left(\frac{1}{m}\sum x_{i}\right)\exp ={\iid}\frac{1}{m^{2}\varepsilon^{2}}\sum\Var\left(x_{i}\right)=\\
+ & =\frac{p\left(1-p\right)}{m\varepsilon^{2}}\leq\frac{1}{4m\varepsilon^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+החסם יתנהג כמו 
+\begin_inset Formula $\frac{1}{m}$
+\end_inset
+
+, וזה יותר טוב מהחסם של מרקוב, שנותן 
+\begin_inset Formula $\frac{1}{\sqrt{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, נגדיר 
+\begin_inset Formula $\delta=\frac{1}{4m\varepsilon^{2}}$
+\end_inset
+
+ ונקבל ש-
+\begin_inset Formula $m=\frac{1}{4\delta\varepsilon^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אם כן, הסקנו כי לכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+, אם ניתן 
+\begin_inset Formula $m>\frac{1}{4\delta\varepsilon^{2}}$
+\end_inset
+
+ דגימות אזי 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Pr\left(\left|\hat{p}-p\right|\leq\varepsilon\right)\geq1-\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+התפלגויות רבות משתנים
+\end_layout
+
+\begin_layout Standard
+עד עכשיו התמודדנו עם התפלגויות של משתנה אחד.
+\end_layout
+
+\begin_layout Standard
+אבל מה אם יש כמה דגימות של משתנים שתלויים זה בזה?
+\end_layout
+
+\begin_layout Standard
+למשל, כיצד נמדל גובה ומשקל של אנשים?
+\end_layout
+
+\begin_layout Standard
+אפשר להחליט למשל ש-
+\begin_inset Formula $w_{1},\dots,w_{m}\siid\n\left(75,3\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $h_{1},\dots,h_{m}\siid\n\left(170,5\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אבל הגובה והמשקל תלויים זה בזה!
+\end_layout
+
+\begin_layout Standard
+לכן נשתמש בוקטורים מקריים.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $X_{1},\dots,X_{d}$
+\end_inset
+
+ קבוצה של מ
+\begin_inset Quotes qrd
+\end_inset
+
+מ המוגדרים מעל אותו מרחב הסתברות.
+\end_layout
+
+\begin_layout Standard
+אזי 
+\begin_inset Formula $X:=\begin{pmatrix}X_{1}\\
+\vdots\\
+X_{d}
+\end{pmatrix}$
+\end_inset
+
+ נקרא 
+\bar under
+וקטור מקרי
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+וקטור מקרי הוא פונקציה ממרחב המדגם ל-
+\begin_inset Formula $\gr^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X:=\begin{pmatrix}X_{1}\\
+\vdots\\
+X_{d}
+\end{pmatrix}$
+\end_inset
+
+ וקטור מקרי.
+ 
+\bar under
+ההתפלגות המשותפת
+\bar default
+ של 
+\begin_inset Formula $X_{1},\dots,X_{d}$
+\end_inset
+
+ הוא פונקצית ההתפלגות על כל הערכים האפשריים של 
+\begin_inset Formula $X_{1},\dots,X_{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename diagrams/w01d02.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב כי קווי הגובה הם אליפסות יפות.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X:=\begin{pmatrix}X_{1}\\
+\vdots\\
+X_{d}
+\end{pmatrix}$
+\end_inset
+
+ וקטור מקרי.
+ 
+\bar under
+מטריצת השונות המשותפת
+\bar default
+ )
+\lang english
+covariance matrix
+\lang hebrew
+( 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ היא מטריצה 
+\begin_inset Formula $d\times d$
+\end_inset
+
+ שהערך ה-
+\begin_inset Formula $\left(i,j\right)$
+\end_inset
+
+ שלה הוא השונות המשותפת:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Sigma_{ij}:=\cov\left(X_{i},X_{j}\right)=\E\left[\left(X_{i}-\E\left(X_{i}\right)\right)\left(X_{j}-\E\left(X_{j}\right)\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph*
+הערה
+\end_layout
+
+\begin_layout Standard
+המטריצה היא ריבועית וסימטרית, והיא גם מטריצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+psd
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X:=\begin{pmatrix}X_{1}\\
+\vdots\\
+X_{d}
+\end{pmatrix}$
+\end_inset
+
+ וקטור מקרי עם התפלגות נורמלית של כמה משתנים עם תוחלת 
+\begin_inset Formula $\mu\in\gr^{d}$
+\end_inset
+
+ ומטריצת שונות משותפת 
+\begin_inset Formula $\Sigma\in\gr^{d\times d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אזי פונקציית ההתפלגות המשותפת היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(X\right)=\frac{1}{\sqrt{\left(2\pi\right)^{d}\left|\Sigma\right|}}\e\left(-\frac{1}{2}\left(X-\mu\right)^{T}\Sigma^{-1}\left(X-\mu\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+)כאשר 
+\begin_inset Formula $\left|\Sigma\right|=\det\left(\Sigma\right)$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+במקרה זה נסמן 
+\begin_inset Formula $X\sim\n\left(\mu,\Sigma\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph*
+הערה
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $d=1$
+\end_inset
+
+ נקבל את ההתפלגות הגאוסית.
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $X\sim\n\left(\mu,\Sigma\right)$
+\end_inset
+
+ וקטור מקרי גאוסיאני דו מימדי, עם מטריצת שונויות משותפות אלכסונית, כלומר,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\sim\n\left(\begin{pmatrix}\mu_{1}\\
+\mu_{2}
+\end{pmatrix},\begin{pmatrix}\sigma_{1}^{2} & 0\\
+0 & \sigma_{2}^{2}
+\end{pmatrix}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי ההתפלגויות השוליות הן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(X_{i}\right)=\frac{1}{\sqrt{2\pi\sigma_{i}^{2}}}\e\left(-\frac{1}{2}\left(\frac{X_{i}-\mu_{i}}{\sigma_{i}}\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בחזרה לדוגמא של גובה ומשקל.
+\end_layout
+
+\begin_layout Standard
+נוכל למדל כל דגימה כוקטור 
+\begin_inset Formula $\x\in\gr^{d}$
+\end_inset
+
+, שהוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realization
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של הוקטור 
+\begin_inset Formula $X:=\left(X_{weight},X_{height}\right)^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לפיכך, המדגם שלנו הוא 
+\begin_inset Formula $S:=\left\{ \x_{1},\dots,\x_{n}\right\} $
+\end_inset
+
+, כאשר כל 
+\begin_inset Formula $\x_{i}$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realization
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הקואורדינאטה ה-
+\begin_inset Formula $j$
+\end_inset
+
+ של הדגימה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ היא 
+\begin_inset Formula $\x_{i}\left(j\right)$
+\end_inset
+
+ או 
+\begin_inset Formula $x_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הקואורדינאטה ה-
+\begin_inset Formula $j$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realization
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של הקואורדינאטה ה-
+\begin_inset Formula $j$
+\end_inset
+
+ של 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, שהיא 
+\begin_inset Formula $X_{i}^{\left(j\right)}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נרצה לשערך את ההתפלגות של המשתנים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\x_{1},\dots,\x_{m}\siid\n\left(\begin{pmatrix}75\\
+170
+\end{pmatrix},\begin{pmatrix}3 & 1\\
+1 & 5
+\end{pmatrix}\right)
+\]
+
+\end_inset
+
+האומד ממוצע המדגם רב המשתנים שלנו הוא פשוט האומד ממוצע המדגם לכל משתנה בנפרד:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\vec{\mu}}=\begin{pmatrix}\vdots\\
+\mat_{j}\\
+\vdots
+\end{pmatrix}=\begin{pmatrix}\vdots\\
+\frac{1}{m}\sum\limits _{i}x_{i,j}\\
+\vdots
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+האומדן של ה-
+\begin_inset Formula $\cov$
+\end_inset
+
+ מעט יותר מורכב, שכן יש תלויות בין המשתנים.
+\end_layout
+
+\begin_layout Standard
+האומד שונות המדגם המשותפת ה
+\emph on
+בלתי מוטה
+\emph default
+ בין 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ ל-
+\begin_inset Formula $X_{j}$
+\end_inset
+
+ נתון על ידי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigat\left(X_{i},X_{j}\right)=\frac{1}{m-1}\sum_{k}\left(x_{ki}-\mat_{i}\right)\left(x_{kj}-\mat_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לבסוף, האומד מטריצת השונות המשותפת של המדגם היא מטריצה 
+\begin_inset Formula $\hat{\Sigma}$
+\end_inset
+
+ מסדר 
+\begin_inset Formula $d\times d$
+\end_inset
+
+ כך ש-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\Sigma}_{ij}:=\sigat\left(X_{i},X_{j}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בכתיב וקטורי, עבור 
+\begin_inset Formula $\boldsymbol{X}\in\gr^{m\times d}$
+\end_inset
+
+ מטריצה ששורותיה הן הדגימות 
+\begin_inset Formula $\x_{1},\dots,\x_{m}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+מטריצת שונות המדגם המוטה נתונה על ידי
+\begin_inset Formula 
+\[
+\hat{\Sigma}:=\frac{1}{m}\sum_{i=1}^{m}\left(\x_{i}-\mat\right)\left(\x_{i}-\mat\right)^{T}=\frac{1}{m}\boldsymbol{\tilde{X}}^{T}\boldsymbol{\tilde{X}}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $\boldsymbol{\tilde{X}}$
+\end_inset
+
+
+\series bold
+ 
+\series default
+היא המטריצה הממורכזת: 
+\begin_inset Formula $\boldsymbol{\tilde{X}}_{\cdot,i}=\boldsymbol{X}_{\cdot,i}-\mat$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+תרגול - קצת לינארית
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+פונקציה 
+\begin_inset Formula $d:X\times X\to\gr$
+\end_inset
+
+ )עבור קבוצה 
+\begin_inset Formula $X$
+\end_inset
+
+ כלשהי( תקרא 
+\bar under
+מטריקה
+\bar default
+ אם
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $d\left(x,y\right)=0$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $x=y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $d\left(x,y\right)=d\left(y,x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $d\left(x,y\right)\leq d\left(x,z\right)+d\left(z+y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d\left(u,v\right)=\sum\limits _{i}\left|u_{i}-v_{i}\right|$
+\end_inset
+
+ היא מטריקה.
+\end_layout
+
+\begin_layout Subsubsection*
+הוכחה
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sum\limits _{i}\left|u_{i}-v_{i}\right|=0$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם כל אחד מהאיברים בסכום הוא 
+\begin_inset Formula $0$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $u_{i}=v_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $u=v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $d\left(u,v\right)=\sum\limits _{i}\left|u_{i}-v_{i}\right|=\sum\limits _{i}\left|v_{i}-u_{i}\right|=d\left(v,u\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{align*}
+d\left(u,v\right) & =\sum\limits _{i}\left|u_{i}-v_{i}\right|=\sum\limits _{i}\left|\left(u_{i}-w_{i}\right)+\left(w_{i}-v_{i}\right)\right|\leq\\
+ & \leq\sum_{i}\left|u_{i}-w_{i}\right|+\sum_{i}\left|w_{i}-v_{i}\right|=d\left(u,w\right)+d\left(w,u\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+פונקציה 
+\begin_inset Formula $\left\Vert \cdot\right\Vert :\gr^{d}\to\gr$
+\end_inset
+
+ תיקרא 
+\bar under
+נורמה
+\bar default
+ אם היא מקיימת את התכונות הבאות:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left\Vert v\right\Vert \geq0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $v$
+\end_inset
+
+, ו-
+\begin_inset Formula $\left\Vert v\right\Vert =0$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $v=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left\Vert \alpha v\right\Vert =\left|a\right|\left\Vert v\right\Vert $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left\Vert v+u\right\Vert \leq\left\Vert v\right\Vert +\left\Vert u\right\Vert $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמאות
+\end_layout
+
+\begin_layout Enumerate
+נורמת 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $\left\Vert v\right\Vert =\sum\limits _{i}\left|v_{i}\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+נורמת 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $\left\Vert v\right\Vert _{2}=\left(\sum\limits _{i}\left|v_{i}\right|^{2}\right)^{\frac{1}{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+נורמת 
+\begin_inset Formula $\ell_{\infty}$
+\end_inset
+
+ המוגדרת על ידי 
+\begin_inset Formula $\left\Vert v\right\Vert _{\infty}=\max\limits _{i}\left\Vert v_{i}\right\Vert $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הכללה
+\end_layout
+
+\begin_layout Standard
+הנורמת הללו הן חלק ממשפחת נורמות 
+\begin_inset Formula $\ell_{p}$
+\end_inset
+
+, המוגדרת על ידי
+\begin_inset Formula 
+\[
+\left\Vert v\right\Vert _{p}=\left(\sum_{i}\left\Vert v_{i}\right\Vert ^{p}\right)^{\frac{1}{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+כדור היחידה לפי הנורמה 
+\begin_inset Formula $\left\Vert \cdot\right\Vert $
+\end_inset
+
+ מוגדר על ידי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{\left\Vert \cdot\right\Vert }=\left\{ x\in V\mid\left\Vert x\right\Vert \leq1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+פונקציה 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle :\gr^{d}\times\gr^{d}\to\gr$
+\end_inset
+
+ נקראת 
+\bar under
+מכפלה פנימית
+\bar default
+ אם היא מקיימת את התכונות הבאות:
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+סימטריות
+\bar default
+: 
+\begin_inset Formula $\left\langle u,v\right\rangle =\left\langle v,u\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+לינאריות
+\bar default
+: 
+\begin_inset Formula $\left\langle \alpha v,u+w\right\rangle =\alpha\left\langle v,w\right\rangle +\alpha\left\langle v,u\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+אי-ניוון
+\bar default
+: 
+\begin_inset Formula $\left\langle u,u\right\rangle \geq0$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\langle u,u\right\rangle =0$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $u=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+נגדיר נורמה על ידי 
+\begin_inset Formula $\left\Vert v\right\Vert =\left\langle v,v\right\rangle ^{\frac{1}{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\theta=\frac{\left\langle v,u\right\rangle }{\left\Vert v\right\Vert \left\Vert u\right\Vert }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+נאמר כי 
+\bar under
+
+\begin_inset Formula $v$
+\end_inset
+
+ מאונך ל-
+\begin_inset Formula $u$
+\end_inset
+
+
+\bar default
+ ונסמן 
+\begin_inset Formula $v\bot u$
+\end_inset
+
+ אם 
+\begin_inset Formula $\left\langle u,v\right\rangle =0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הטלה אורתוגונית של 
+\begin_inset Formula $u$
+\end_inset
+
+ על 
+\begin_inset Formula $v$
+\end_inset
+
+
+\bar default
+ הוא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vec{P}=p\hat{u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p & =\left\langle v,\hat{u}\right\rangle \\
+\hat{u} & =\frac{u}{\left\Vert u\right\Vert }
+\end{align*}
+
+\end_inset
+
+ כלומר,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vec{P}=\left\langle v,\hat{u}\right\rangle \hat{u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $v\in\gr^{n}$
+\end_inset
+
+ ו-
+\begin_inset Formula $u\in\gr^{m}$
+\end_inset
+
+, אזי המכפלה החיצונית של 
+\begin_inset Formula $v,u$
+\end_inset
+
+ היא מטריצה מסדר 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ כך ש-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(v\cdot u\right)_{ij}=v_{i}u_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הדרגה של מטריצה זו היא 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $V\subseteq\gr^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\dim\left(V\right)=k$
+\end_inset
+
+, 
+\begin_inset Formula $v_{1},\dots,v_{k}$
+\end_inset
+
+ בסיס אורתונורמלי ל-
+\begin_inset Formula $v$
+\end_inset
+
+.
+ אזי מטריצת ההטלה האורתוגונלית על המרחב 
+\begin_inset Formula $V$
+\end_inset
+
+ היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P=\sum_{i}v_{i}\otimes v_{i}=\sum v_{i}v_{i}^{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+)
+\begin_inset Formula $P$
+\end_inset
+
+ היא מטריצה מגודל 
+\begin_inset Formula $d\times d$
+\end_inset
+
+ מדרגה 
+\begin_inset Formula $k$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Subsubsection*
+מסקנה
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $x\in\gr^{d}$
+\end_inset
+
+, אזי יתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Px\in V
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+למשל, אם 
+\begin_inset Formula $k=1$
+\end_inset
+
+ נקבל 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Px=\left(v_{1}v_{1}^{t}\right)x=v_{1}v_{1}^{t}x=v_{1}\left\langle v_{1},x\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שזו בדיוק ההטלה של 
+\begin_inset Formula $x$
+\end_inset
+
+ על 
+\begin_inset Formula $\sp\left\{ v_{1}\right\} $
+\end_inset
+
+ )כי 
+\begin_inset Formula $\left\Vert v_{1}\right\Vert =1$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Subsection*
+דוגמא לאלגוריתם למידה
+\end_layout
+
+\begin_layout Standard
+נניח כי יש 
+\begin_inset Formula $d$
+\end_inset
+
+ משוואות בת
+\begin_inset Quotes qrd
+\end_inset
+
+ל ב-
+\begin_inset Formula $d$
+\end_inset
+
+ נעלמים מהצורה 
+\begin_inset Formula $y_{i}=x_{i}^{t}w=\sum\limits _{j}x_{ij}w_{j}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[d\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נתונים 
+\begin_inset Formula $x,y$
+\end_inset
+
+.
+ נרצה למצוא את 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כלומר, נתונים 
+\begin_inset Formula $y=\begin{pmatrix}y_{1}\\
+\vdots\\
+y_{d}
+\end{pmatrix}$
+\end_inset
+
+ ו-
+\begin_inset Formula $x=\begin{pmatrix}\cdots & x_{1} & \cdots\\
+ & \vdots\\
+\cdots & x_{n} & \cdots
+\end{pmatrix}$
+\end_inset
+
+, ומטרתנו היא למצוא 
+\begin_inset Formula $w$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $y=xw$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נרצה לבנות את הפונקציה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def lig_reg(x,y):
+\end_layout
+
+\begin_layout Plain Layout
+
+	...
+\end_layout
+
+\begin_layout Plain Layout
+
+	return w
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המשוואות בת
+\begin_inset Quotes qrd
+\end_inset
+
+ל, ולכן דרגתה של 
+\begin_inset Formula $x$
+\end_inset
+
+ מלאה ולכן קיימת לה מטריצה הופכית ולכן נוכל להשתמש באלגוריתם המחזיר את
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w=x^{-1}xw=x^{-1}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+בהינתן מטריצה 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\bar under
+ללכסן את 
+\begin_inset Formula $A$
+\end_inset
+
+
+\bar default
+ משמעותו למצוא מטריצה אלכסונית 
+\begin_inset Formula $D$
+\end_inset
+
+ ומטריצה הפיכה 
+\begin_inset Formula $P$
+\end_inset
+
+ כך ש-
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+D & =PAP^{-1}\\
+P^{-1}DP & =A
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+פירוק לערכים עצמיים )
+\lang english
+Eigen Value Decomposition
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $A\in\gr^{d\times d}$
+\end_inset
+
+ סימטרית.
+ אזי קיימות 
+\begin_inset Formula $U,D\in\gr^{d\times d}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $A=UDU^{t}$
+\end_inset
+
+ המקיימות
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $U$
+\end_inset
+
+ אורתוגונלית שעמודותיה הן ו
+\begin_inset Quotes qrd
+\end_inset
+
+ע של 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $D$
+\end_inset
+
+ אלכסונית שערכי האלכסון שלהם הם הע
+\begin_inset Quotes qrd
+\end_inset
+
+ע של 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+דוגמא
+\end_layout
+
+\begin_layout Standard
+נתבונן במטריצה 
+\begin_inset Formula $A=\begin{pmatrix}2 & 1\\
+1 & 2
+\end{pmatrix}$
+\end_inset
+
+.
+ נבצע לה פירוק
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+EVD
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נמצא ע
+\begin_inset Quotes qrd
+\end_inset
+
+ע על ידי מציאת שורשים לפולינום:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\det\left(A-\lambda i\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+השורשים הם 
+\begin_inset Formula $\lambda_{1}=3,\lambda_{2}=1$
+\end_inset
+
+, ולכן 
+\begin_inset Formula $D=\begin{pmatrix}3 & 0\\
+0 & 1
+\end{pmatrix}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כעת נותר למצוא את הוקטורים העצמיים, ונקבל
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\begin{pmatrix}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם יש לנו וקטור 
+\begin_inset Formula $x\in\gr^{d}$
+\end_inset
+
+ המקיים 
+\begin_inset Formula $\left\Vert x\right\Vert =1$
+\end_inset
+
+, אזי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ax=\left(UDU^{t}\right)x=UD\begin{pmatrix}x^{t}u_{1}\\
+\vdots\\
+x^{t}u_{d}
+\end{pmatrix}=U\begin{pmatrix}\lambda_{1}x^{t}u_{1}\\
+\vdots\\
+\lambda_{d}x^{t}u_{d}
+\end{pmatrix}=\sum\lambda_{i}\left\langle x,u_{i}\right\rangle u_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+פירוק לערכים סינגולריים )
+\lang english
+Singular Value Decomposition
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Subsubsection*
+הגדרה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v,u$
+\end_inset
+
+ הם 
+\bar under
+וקטורים סינגולריים
+\bar default
+ של 
+\begin_inset Formula $A$
+\end_inset
+
+ המתאימים ל
+\bar under
+ערך סינגולרי
+\bar default
+ 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ אם
+\begin_inset Quotes qrd
+\end_inset
+
+ם 
+\begin_inset Formula $Av=\sigma u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+במקרה זה 
+\begin_inset Formula $v$
+\end_inset
+
+ יקרא 
+\bar under
+וקטור סינגולרי ימני
+\bar default
+ ו-
+\begin_inset Formula $u$
+\end_inset
+
+ יקרא 
+\bar under
+וקטור סינגולרי שמאלי
+\bar default
+.
+\end_layout
+
+\begin_layout Subsubsection*
+משפט ה-
+\lang english
+SVD
+\end_layout
+
+\begin_layout Standard
+תהי 
+\begin_inset Formula $A\in\gr^{m\times d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אזי 
+\begin_inset Formula $A=U\Sigma V^{T}$
+\end_inset
+
+ כאשר
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $U\in\gr^{m\times m}$
+\end_inset
+
+ אורתוגונלית שעמודותיה 
+\begin_inset Formula $u_{1},\dots,u_{m}$
+\end_inset
+
+ ו
+\begin_inset Quotes qrd
+\end_inset
+
+ס שמאליים של 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V\in\gr^{d\times d}$
+\end_inset
+
+ אורתוגונלית שעמודותיה 
+\begin_inset Formula $v_{1},\dots,v_{d}$
+\end_inset
+
+ ו
+\begin_inset Quotes qrd
+\end_inset
+
+ס ימניים של 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Sigma\in\gr^{m\times d}$
+\end_inset
+
+ 
+\begin_inset Quotes qld
+\end_inset
+
+אלכסונית
+\begin_inset Quotes qrd
+\end_inset
+
+ שערכיה ע
+\begin_inset Quotes qrd
+\end_inset
+
+ס של 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+הערה
+\end_layout
+
+\begin_layout Standard
+המשמעות של מטריצה אלכסונית היא ש-
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ היא מהצורה 
+\begin_inset Formula $\left(\begin{array}{c|c}
+D & 0\end{array}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $D$
+\end_inset
+
+ אלכסונית.
+\end_layout
+
+\begin_layout Subsubsection*
+משמעות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $x\in\gr^{d}$
+\end_inset
+
+.
+ נזכור כי 
+\begin_inset Formula $x=\sum\limits _{i}\left\langle x_{i},v_{i}\right\rangle v_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ax=A\sum_{i}\left\langle x,v_{i}\right\rangle v_{i}=\sum_{i}\left\langle x,v_{i}\right\rangle U\Sigma V^{T}v_{i}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבחין כי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[V^{T}v_{i}\right]_{j}=\delta_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V^{T}v_{i}=e_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+)כאשר 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ הוקטור ה-
+\begin_inset Formula $i$
+\end_inset
+
+ בבסיס הסטנדרטי(
+\end_layout
+
+\begin_layout Standard
+ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\sum_{i}\left\langle x_{i},v_{i}\right\rangle U\Sigma e_{i}=\sum_{i}\sigma_{i}\left\langle x_{i},v_{i}\right\rangle Ue_{i}=\sum_{i}\sigma_{i}\left\langle x_{i},v_{i}\right\rangle u_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\end_layout
+
+\begin_layout Standard
+כיצד נמצא את 
+\begin_inset Formula $V,U$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Subsubsection*
+תשובה
+\end_layout
+
+\begin_layout Standard
+נניח שבחרנו בסיס אורתונורמלי כלשהו 
+\begin_inset Formula $v_{1},\dots,v_{d}$
+\end_inset
+
+.
+ נבחין כי אם נפעיל את 
+\begin_inset Formula $A$
+\end_inset
+
+ על הבסיס נקבל
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Av_{1},\dots,A_{v_{d}}
+\]
+
+\end_inset
+
+אבל אין שום סיבה ש-
+\begin_inset Formula $Av_{1},\dots,A_{v_{d}}$
+\end_inset
+
+ יהיו אורתוגונליים!
+\end_layout
+
+\begin_layout Standard
+נבחין כי 
+\begin_inset Formula $A^{T}A$
+\end_inset
+
+ היא מטריצה סימטרית, ולכן קיים לה פירוק
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+EVD
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נניח שיש לנו פירוק
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+SVD
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+A^{T}A & =\left(U\Sigma V^{T}\right)^{T}U\Sigma V^{T}=V\Sigma^{T}\expbrace{U^{T}U}I\Sigma V^{T}=\\
+ & =V\expbrace D{\Sigma^{T}\Sigma}V^{T}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן, בהינתן 
+\begin_inset Formula $A$
+\end_inset
+
+ נוכל לבצע
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+EVD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $A^{T}A$
+\end_inset
+
+, ונקבל 
+\begin_inset Formula $v_{1},\dots,v_{d}$
+\end_inset
+
+ בסיס אורתונורמלי ו-
+\begin_inset Formula $\lambda_{1},\dots,\lambda_{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נוכל לבצע תהליך דומה על 
+\begin_inset Formula $AA^{T}$
+\end_inset
+
+ ונקבל 
+\begin_inset Formula $u_{1},\dots,u_{m}$
+\end_inset
+
+ בסיס אורתונורמלי ו-
+\begin_inset Formula $\lambda_{1},\dots,\lambda_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ויתקיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Av_{i}=\sqrt{\lambda_{i}}u_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
